@@ -1,9 +1,19 @@
+# インストールした discord.py を読み込む
 import discord
 
-token = DISCORD_BOT_TOKEN
+# 自分のBotのアクセストークンに置き換えてください
+TOKEN = 'NzExNTY0ODM3Nzk2NDQ2MjQ5.XsFDDA._qq3UgpsA0XwSywV6W6TBkWNbQA'
 
+# 接続に必要なオブジェクトを生成
 client = discord.Client()
 
+# 起動時に動作する処理
+@client.event
+async def on_ready():
+    # 起動したらターミナルにログイン通知が表示される
+    print('ログインしました')
+
+# メッセージ受信時に動作する処理
 @client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
