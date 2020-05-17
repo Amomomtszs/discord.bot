@@ -2,7 +2,7 @@ import os
 import traceback
 
 token = os.environ['DISCORD_BOT_TOKEN']
-
+client = discord.Client()
 @client.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
